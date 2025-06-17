@@ -1,1 +1,1 @@
-sudo /usr/local/go/bin/go run main.go
+sudo go run main.go
