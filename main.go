@@ -8,10 +8,12 @@ import (
 	"github.com/urfave/cli/v2"
 )
 
+const usage = `Kaii's First Container, is a simple container implementation`
+
 func main() {
 	app := &cli.App{
 		Name:  "kfc",
-		Usage: "Kaii's First Container",
+		Usage: usage,
 		// functions that will be executed before and after the app runs
 		Commands: []*cli.Command{
 			runCommand,
