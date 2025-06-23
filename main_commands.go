@@ -5,6 +5,7 @@ import (
 
 	log "github.com/sirupsen/logrus"
 	"github.com/urfave/cli/v2"
+	"github.com/zhongkaixu/kfc/cgroups/subsystems"
 	"github.com/zhongkaixu/kfc/container"
 )
 
@@ -18,19 +19,35 @@ var runCommand = &cli.Command{
 			Name:  "tty",
 			Usage: "enable TTY",
 		},
+		&cli.StringFlag{
+			Name:  "m",
+			Usage: "memory limit",
+		},
+		&cli.StringFlag{
+			Name:  "cpushare",
+			Usage: "cpushare limit",
+		},
+		&cli.StringFlag{
+			Name:  "cpuset",
+			Usage: "cpuset limit",
+		},
 	},
 	// Action is the function that will be executed
 	Action: func(ctx *cli.Context) error {
+		log.Infof("Welcome to KFC")
 		// if user foget to provide a command
 		if ctx.Args().Len() == 0 {
 			return fmt.Errorf("missing container command")
 		}
-
-		// the command to run in the container
-		cmd := ctx.Args().Get(0)
+		// cmdArray := ctx.Args().Slice()
+		resConf := &subsystems.ResourceConfig{
+			MemoryLimit: ctx.String("m"),
+			CpuShare:    ctx.String("cpushare"),
+			CpuSet:      ctx.String("cpuset"),
+		}
 		// if user need a tty
 		tty := ctx.Bool("tty")
-		Run(tty, cmd)
+		Run(tty, ctx.Args().First(), resConf)
 		return nil
 	},
 }
@@ -41,9 +58,8 @@ var initCommand = &cli.Command{
 	Usage: "Initialize the container environment",
 	// get command line arguments, init the container environment
 	Action: func(ctx *cli.Context) error {
-		log.Infof("init come on")
-		cmd := ctx.Args().Get(0)
-		log.Infof("init command: %s", cmd)
+		log.Infof("Starting container init process")
+		cmd := ctx.Args().First()
 		err := container.RunContainerInitProcess(cmd, nil)
 		return err
 	},
