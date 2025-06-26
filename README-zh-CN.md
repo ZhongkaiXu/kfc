@@ -1,6 +1,6 @@
-# kfc - Kai's First Container ![Go](https://img.shields.io/badge/Go-1.24-blue)
+# kfc - Kai's First Container ![Go](https://img.shields.io/badge/Go-1.24-blue) ![License: MIT](https://img.shields.io/badge/license-MIT-green)
 
-📘 English version: [README.zh-CN.md](./README.md)
+📘 [English](./README.md)
 
 本项目包含了我在学习[mydocker](https://github.com/xianlubird/mydocker)时的代码实现和学习笔记。
 
@@ -8,7 +8,7 @@
 
 ## 📑 目录
 
-- [kfc - Kai's First Container ](#kfc---kais-first-container-)
+- [kfc - Kai's First Container  ](#kfc---kais-first-container--)
   - [📑 目录](#-目录)
   - [📚 背景](#-背景)
   - [🛠️ 改进](#️-改进)

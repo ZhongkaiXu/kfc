@@ -1,6 +1,6 @@
-# kfc - Kai's First Container ![Go](https://img.shields.io/badge/Go-1.24-blue)
+# kfc - Kai's First Container ![Go](https://img.shields.io/badge/Go-1.24-blue) ![License: MIT](https://img.shields.io/badge/license-MIT-green)
 
-📘 中文版本：[README-zh-CN.md](./README-zh-CN.md)
+📘 [中文](./README-zh-CN.md)
 
 This project is my personal implementation and learning record of building a container runtime, inspired by the excellent [mydocker project](https://github.com/xianlubird/mydocker). It serves both as a coding exercise and documentation of my understanding of container fundamentals.
 
@@ -8,7 +8,7 @@ This project is my personal implementation and learning record of building a con
 
 ## 📑 Table of Contents
 
-- [kfc - Kai's First Container ](#kfc---kais-first-container-)
+- [kfc - Kai's First Container  ](#kfc---kais-first-container--)
   - [📑 Table of Contents](#-table-of-contents)
   - [📚 Background](#-background)
   - [🛠️ Improvements over the original mydocker](#️-improvements-over-the-original-mydocker)
